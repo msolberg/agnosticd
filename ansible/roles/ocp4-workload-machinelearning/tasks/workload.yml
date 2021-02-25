@@ -96,6 +96,23 @@
   when: r_amq_sub.resources | list | length == 0
   include_tasks: install-amqstreams.yaml
 
+# Install Open Data Hub
+- name: Look for Open Data Hub subscription
+  k8s_facts:
+    apiVersion: operators.coreos.com/v1alpha1
+    kind: Subscription
+    name: opendatahub-operator
+    namespace: openshift-operators
+  register: odh_sub
+
+- name: show existing odh sub
+  debug:
+    msg: "existing odh sub: {{ odh_sub }}"
+
+- name: Install Open Data Hub
+  when: odh_sub.resources | list | length == 0
+  include_tasks: install-odh.yaml
+
 # Leave this as the last task in the playbook.
 - name: workload tasks complete
   debug:
