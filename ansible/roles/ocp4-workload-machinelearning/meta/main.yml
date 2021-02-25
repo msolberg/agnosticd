@@ -1,0 +1,17 @@
+---
+galaxy_info:
+  role_name: ocp4-workload-machinelearning
+  author: 
+    - Red Hat Southeast RTO, Michael Solberg <msolberg@redhat.com>
+    - Red Hat Southeast RTO, Tosin Akinosho <tosin@redhat.com>
+  description: |
+    Create Machine Learning workshop with CodeReady Workspaces, AMQ Streams, OpenShift 4.
+    This catalog entry is developed and maintained by the Southeast RTO.
+  license: MIT
+  min_ansible_version: 2.9
+  platforms: []
+  galaxy_tags:
+  - workshop
+  - ocp
+  - openshift
+dependencies: []
