@@ -99,7 +99,7 @@
 # Install Open Data Hub
 - name: Look for Open Data Hub subscription
   k8s_facts:
-    apiVersion: operators.coreos.com/v1alpha1
+    api_version: operators.coreos.com/v1alpha1
     kind: Subscription
     name: opendatahub-operator
     namespace: openshift-operators

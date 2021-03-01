@@ -1,4 +1,4 @@
---
+---
 # Setup Open Data Hub via operator
 - name: Create OpenShift Objects for Open Data Hub
   k8s:
