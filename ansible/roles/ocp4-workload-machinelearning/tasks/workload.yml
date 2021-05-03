@@ -62,6 +62,23 @@
   when: r_rhsso_dc.resources | list | length == 0
   include_tasks: install-rhsso.yaml
 
+# Setup OpenShift Serverless via operator
+- name: Look for serverless subscription
+  k8s_facts:
+    api_version: operators.coreos.com/v1alpha1
+    kind: Subscription
+    name: serverless-operator
+    namespace: openshift-operators
+  register: r_serverless_sub
+
+- name: show existing serverless sub
+  debug:
+    msg: "existing serverless sub: {{ r_serverless_sub }}"
+
+- name: Create OpenShift Objects for Serverless (knative)
+  when: r_serverless_sub.resources | list | length == 0
+  include_tasks: install-serverless.yaml
+
 # Install  AMQ Streams for all workspaces
 - name: Look for amq subscription
   k8s_facts:
