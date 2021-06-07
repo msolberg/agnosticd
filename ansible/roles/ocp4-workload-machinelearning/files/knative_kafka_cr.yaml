@@ -1,5 +1,5 @@
 ---
-apiVersion: operator.serverless.openshift.io/v1alpha1
+apiVersion: operator.serverless.openshift.io/v1
 kind: KnativeKafka
 metadata:
     name: knative-kafka

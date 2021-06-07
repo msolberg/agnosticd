@@ -2,11 +2,11 @@
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
-  name: serverless-operator
+  name: kiali-ossm
   namespace: openshift-operators
 spec:
-  channel: "4.6"
+  channel: "stable"
   installPlanApproval: Automatic
-  name: serverless-operator
+  name: kiali-ossm
   source: redhat-operators-index
   sourceNamespace: openshift-marketplace
