@@ -35,7 +35,7 @@
   until: r_knserving_crd.resources | list | length == 1
 
 - name: wait for serving project to exist
-  k8s_facts:
+  k8s_info:
     kind: Project
     api_version: project.openshift.io/v1
     name: "knative-serving"
